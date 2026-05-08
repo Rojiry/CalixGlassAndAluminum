@@ -2,13 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>calix glass and aluminum | Company Profile</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>CALIX Glass and Aluminum | Company Profile</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
 
@@ -36,18 +43,12 @@
       overflow-x:hidden;
       line-height:1.7;
     }
-    
-    
-    img,
-video{
-  max-width:100%;
-  height:auto;
-}
 
-html,
-body{
-  overflow-x:hidden;
-}
+    img,
+    video{
+      max-width:100%;
+      height:auto;
+    }
 
     nav{
       transition:0.3s ease;
@@ -61,12 +62,13 @@ body{
     }
 
     .nav-container{
-      max-width:1200px;
+      width:min(100%,1200px);
       margin:auto;
       display:flex;
       justify-content:space-between;
       align-items:center;
       padding:18px 40px;
+      position:relative;
     }
 
     .logo img{
@@ -104,53 +106,94 @@ body{
       width:100%;
     }
 
+    .menu-toggle{
+      display:none;
+      font-size:2rem;
+      cursor:pointer;
+      color:var(--red);
+    }
+
     section{
-      min-height:auto;
-      padding:130px 80px 80px;
+      padding:
+      clamp(100px,12vw,130px)
+      clamp(20px,6vw,80px)
+      clamp(60px,8vw,80px);
+
       display:flex;
       align-items:center;
     }
 
     .container{
-  width:100%;
-  max-width:1200px;
-  margin:auto;
-  padding-left:20px;
-  padding-right:20px;
-}
+      width:min(100%,1200px);
+      margin:auto;
+    }
 
-    .hero{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:60px;
+    .hero-banner{
+      position:relative;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 25px 50px rgba(0,0,0,0.12);
+      margin-bottom:80px;
+    }
+
+    .hero-video{
+      width:100%;
+      height:78vh;
+      min-height:600px;
+      object-fit:cover;
+      background:#2a2a2a;
+      display:block;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+
+      background:
+      linear-gradient(
+        to right,
+        rgba(20,20,20,0.72),
+        rgba(20,20,20,0.28)
+      );
+
+      display:flex;
       align-items:center;
+
+      padding:clamp(30px,5vw,80px);
     }
 
-    .hero-text h4{
-      color:var(--red-light);
-      letter-spacing:3px;
-      margin-bottom:20px;
-      font-weight:600;
+    .hero-content{
+      max-width:700px;
+      color:white;
+    }
+
+    .hero-content h4{
+      letter-spacing:4px;
+      margin-bottom:18px;
       text-transform:uppercase;
-      font-size:0.85rem;
+      font-size:0.9rem;
+      color:#f3d5c0;
     }
 
-   .hero-text h1{
-  font-size:clamp(2.5rem, 7vw, 4.5rem);
-      line-height:1.1;
+    .hero-content h1{
+      font-size:clamp(2.5rem,7vw,5rem);
+      line-height:1.05;
       margin-bottom:25px;
-      color:var(--red);
+      font-weight:700;
     }
 
-    .hero-text p{
-      color:var(--muted);
+    .hero-content p{
+      font-size:clamp(0.95rem,1.5vw,1.05rem);
+      line-height:1.8;
+      max-width:620px;
+      opacity:0.92;
       margin-bottom:35px;
-      max-width:550px;
     }
 
     .btn-group{
       display:flex;
       gap:20px;
+      flex-wrap:wrap;
     }
 
     .btn{
@@ -163,6 +206,7 @@ body{
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      border-radius:10px;
     }
 
     .btn-primary{
@@ -186,53 +230,15 @@ body{
       color:var(--white);
     }
 
-    .hero-card{
-      background:linear-gradient(145deg,#fffaf5,#efe3d4);
-      padding:50px;
-      border-radius:20px;
-      box-shadow:0 20px 40px rgba(175,167,167,0.08);
-      position:relative;
-    }
-
-    .hero-card::before{
-      content:'';
-      position:absolute;
-      top:-20px;
-      right:-20px;
-      width:120px;
-      height:120px;
-      background:rgba(249,37,33,0.08);
-      border-radius:50%;
-    }
-
-    .stat-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:25px;
-      margin-top:25px;
-    }
-
-    .stat{
-      padding:25px;
-      background:var(--white);
-      border-left:4px solid var(--red);
-      border-radius:12px;
-    }
-
-    .stat h2{
-      color:var(--red);
-      margin-bottom:8px;
-      font-size:2rem;
-    }
-
     .section-title{
       margin-bottom:50px;
     }
 
     .section-title h2{
-      font-size:3rem;
+      font-size:clamp(2rem,5vw,3rem);
       color:var(--red);
       margin-bottom:15px;
+      line-height:1.1;
     }
 
     .section-title p{
@@ -249,7 +255,7 @@ body{
 
     .about-grid{
       grid-template-columns:1fr 1fr;
-      align-items:center;
+      align-items:stretch;
     }
 
     .about-card{
@@ -269,6 +275,7 @@ body{
       border-radius:18px;
       transition:0.3s ease;
       border-top:4px solid transparent;
+      box-shadow:0 8px 20px rgba(0,0,0,0.04);
     }
 
     .service-card:hover{
@@ -291,11 +298,21 @@ body{
       border-radius:18px;
       overflow:hidden;
       box-shadow:0 12px 25px rgba(0,0,0,0.06);
+      transition:0.3s ease;
+    }
+
+    .portfolio-item:hover{
+      transform:translateY(-6px);
     }
 
     .portfolio-image{
-      height:220px;
-      background:linear-gradient(135deg,#6f1d1b,#9b3d39);
+      width:100%;
+      aspect-ratio:16/10;
+      background:linear-gradient(
+        135deg,
+        #6f1d1b,
+        #9b3d39
+      );
     }
 
     .portfolio-content{
@@ -314,7 +331,7 @@ body{
     }
 
     .footer-content{
-      max-width:1200px;
+      width:min(100%,1200px);
       margin:auto;
       display:flex;
       justify-content:space-between;
@@ -333,204 +350,112 @@ body{
 
     @media (max-width:900px){
 
-      section{
-        padding:120px 30px 70px;
-      }
-
-      .hero,
       .about-grid{
         grid-template-columns:1fr;
-      }
-
-      .hero-text h1{
-        font-size:3rem;
-      }
-
-      .nav-links{
-        gap:15px;
       }
 
       .nav-container{
         padding:18px 25px;
       }
+
+      .hero-video{
+        min-height:520px;
+      }
+
+    }
+
+    @media (max-width:768px){
+
+      .menu-toggle{
+        display:block;
+      }
+
+      .nav-links{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:var(--cream);
+        flex-direction:column;
+        align-items:center;
+        padding:25px 0;
+        gap:20px;
+        display:none;
+        border-bottom:1px solid rgba(0,0,0,0.08);
+      }
+
+      .nav-links.active{
+        display:flex;
+      }
+
+      .hero-video{
+        height:85vh;
+        min-height:650px;
+      }
+
+      .hero-overlay{
+        align-items:flex-end;
+      }
+
+    }
+
+    @media (max-width:700px){
+
+      footer{
+        padding:50px 25px;
+      }
+
+      .footer-content{
+        flex-direction:column;
+      }
+
     }
 
     @media (max-width:600px){
 
-      .nav-links{
-        display:none;
+      .logo img{
+        height:58px;
       }
 
-      .hero-text h1{
-        font-size:2.4rem;
+      .hero-content h4{
+        font-size:0.75rem;
+        letter-spacing:3px;
       }
 
-      .section-title h2{
-        font-size:2.2rem;
+      .hero-video{
+        min-height:720px;
       }
 
-      .stat-grid{
+      .service-card,
+      .about-card{
+        padding:28px;
+      }
+
+    }
+
+    @media (max-width:480px){
+
+      .btn-group{
+        flex-direction:column;
+        width:100%;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero-overlay{
+        padding:25px;
+      }
+
+      .hero-content p{
+        line-height:1.7;
+      }
+
+      .portfolio-grid{
         grid-template-columns:1fr;
       }
-      /* ========================= */
-/* LARGE TABLETS */
-/* ========================= */
 
-@media (max-width:1024px){
-
-  section{
-    padding:110px 30px 70px;
-  }
-
-  .hero{
-    grid-template-columns:1fr;
-    gap:40px;
-  }
-
-  .hero-card{
-    padding:35px;
-  }
-
-  .nav-container{
-    padding:15px 25px;
-  }
-
-  .logo img{
-    height:58px;
-  }
-
-}
-
-/* ========================= */
-/* TABLETS */
-/* ========================= */
-
-@media (max-width:768px){
-
-  .nav-links{
-    gap:18px;
-  }
-
-  .nav-links a{
-    font-size:0.85rem;
-  }
-
-  .hero-text h1{
-    line-height:1.15;
-  }
-
-  .section-title h2{
-    font-size:2.5rem;
-  }
-
-  .about-grid{
-    grid-template-columns:1fr;
-  }
-
-  .footer-content{
-    flex-direction:column;
-  }
-
-}
-
-/* ========================= */
-/* MOBILE DEVICES */
-/* ========================= */
-
-@media (max-width:600px){
-
-  nav{
-    padding:0;
-  }
-
-  .nav-container{
-    flex-direction:column;
-    gap:12px;
-    padding:15px;
-  }
-
-  .logo img{
-    height:52px;
-  }
-
-  .nav-links{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:12px;
-  }
-
-  .nav-links a{
-    font-size:0.8rem;
-  }
-
-  section{
-    padding:120px 20px 60px;
-  }
-
-  .hero-text h4{
-    letter-spacing:2px;
-    font-size:0.75rem;
-  }
-
-  .hero-text p{
-    font-size:0.95rem;
-  }
-
-  .btn-group{
-    flex-direction:column;
-    width:100%;
-  }
-
-  .btn{
-    width:100%;
-  }
-
-  .hero-card{
-    padding:25px;
-  }
-
-  .stat-grid{
-    grid-template-columns:1fr;
-  }
-
-  .section-title h2{
-    font-size:2rem;
-  }
-
-  .services-grid,
-  .portfolio-grid{
-    grid-template-columns:1fr;
-  }
-
-  .portfolio-image{
-    height:180px;
-  }
-
-  footer{
-    padding:50px 20px;
-  }
-
-}
-
-/* ========================= */
-/* EXTRA SMALL DEVICES */
-/* ========================= */
-
-@media (max-width:380px){
-
-  .hero-text h1{
-    font-size:2.1rem;
-  }
-
-  .section-title h2{
-    font-size:1.7rem;
-  }
-
-  .hero-card{
-    padding:20px;
-  }
-
-}
     }
 
   </style>
@@ -538,76 +463,87 @@ body{
 
 <body>
 
-<script>
+  <nav>
 
-window.addEventListener('scroll',()=>{
+    <div class="nav-container">
 
-  const nav=document.querySelector('nav');
+      <div class="logo">
+        <img src="CALIX_LOGO.png" alt="CALIX Logo">
+      </div>
 
-  if(window.scrollY > 50){
-    nav.style.boxShadow='0 10px 25px rgba(0,0,0,0.08)';
-  }
+      <div class="nav-links">
 
-  else{
-    nav.style.boxShadow='none';
-  }
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#specialization">Specialization</a>
+        <a href="#portfolio">Projects</a>
 
-});
+      </div>
 
-</script>
+      <div class="menu-toggle" id="menuToggle">
+        ☰
+      </div>
 
-<nav>
-
-  <div class="nav-container">
-
-    <div class="logo">
-      <img src="CALIX_LOGO.png" alt="CALIX Logo">
     </div>
 
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#specialization">Specialization</a>
-      <a href="#portfolio">Portfolio</a>
-    </div>
+  </nav>
 
-  </div>
+  <section id="home">
 
-</nav>
+    <div class="container">
 
-<section id="home">
+      <div class="hero-banner">
 
-  <div class="container">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="hero-video"
+        >
+          <source src="your-video.mp4" type="video/mp4">
+        </video>
 
-    <div style="margin-bottom:80px; position:relative; border-radius:24px; overflow:hidden; box-shadow:0 25px 50px rgba(0,0,0,0.12);">
+        <div class="hero-overlay">
 
-      <video autoplay muted loop playsinline webkit-playsinline style="width:100%; height:min(78vh,900px);; object-fit:cover; background:#2a2a2a; display:block;">
-        <source src="your-video.mp4" type="video/mp4">
-      </video>
+          <div class="hero-content">
 
-      <div style="position:absolute; inset:0; background:linear-gradient(to right, rgba(20,20,20,0.65), rgba(20,20,20,0.25)); display:flex; align-items:center; padding:clamp(20px,5vw,80px);">
+            <h4>
+              A Better View of Quality Service
+            </h4>
 
-        <div style="max-width:700px; color:white;">
+            <h1>
+              Company Overview
+            </h1>
 
-          <h4 style="letter-spacing:4px; margin-bottom:18px; text-transform:uppercase; font-size:0.9rem; color:#f3d5c0;">
-            A better view of quality service
-          </h4>
+            <p>
+              CALIX glass and aluminum fabrication is a single
+              proprietorship company since 2017 which is engaged
+              in the construction business industry, design and
+              fabrication of glass and aluminum project planning
+              and management.
+            </p>
 
-          <h1 style="font-size:5rem; line-height:1.05; margin-bottom:25px; font-weight:700;">
-            Company Overview
-          </h1>
+            <div class="btn-group">
 
-          <p style="font-size:1.05rem; line-height:1.8; max-width:620px; opacity:0.92; margin-bottom:35px;">
-            CALIX glass and aluminum fabrication is a single proprietorship company since 2017 which is engaged in the construction business industry, design and fabrication of glass and aluminum project planning and management.
-          </p>
+              <a
+                href="#portfolio"
+                class="btn btn-primary"
+              >
+                View Projects
+              </a>
 
-          <div class="btn-group">
-            <a href="#portfolio" class="btn btn-primary">View Projects</a>
+              <a
+                href="#about"
+                class="btn btn-outline"
+                style="border-color:white; color:white;"
+              >
+                Company Profile
+              </a>
 
-            <a href="#about" class="btn btn-outline" style="border-color:white; color:white;">
-              Company Profile
-            </a>
+            </div>
+
           </div>
 
         </div>
@@ -616,259 +552,354 @@ window.addEventListener('scroll',()=>{
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+  <section id="about">
 
-<section id="about">
-  <div class="container">
+    <div class="container">
 
-    <div class="section-title">
-      <h2>About The Company</h2>
+      <div class="section-title">
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat,
-        tortor at tincidunt cursus, elit lorem gravida ligula, nec dictum nisl
-        purus non tortor.
-      </p>
+        <h2>
+          About The Company
+        </h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Integer feugiat, tortor at tincidunt cursus, elit lorem
+          gravida ligula, nec dictum nisl purus non tortor.
+        </p>
+
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-card">
+
+          <h3
+            style="
+            margin-bottom:20px;
+            color:var(--red);
+            "
+          >
+            Mission
+          </h3>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Etiam sed tristique erat. Curabitur feugiat, lectus in
+            scelerisque viverra, mauris nulla dignissim est.
+          </p>
+
+        </div>
+
+        <div class="about-card">
+
+          <h3
+            style="
+            margin-bottom:20px;
+            color:var(--red);
+            "
+          >
+            Objectives
+          </h3>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Donec viverra felis vitae sem bibendum, ac tempus elit
+            faucibus. Vivamus ullamcorper efficitur mauris.
+          </p>
+
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="about-grid">
+  </section>
 
-      <div class="about-card">
-        <h3 style="margin-bottom:20px; color:var(--red);">
-          Mission
+  <section id="services">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Services Offered
+        </h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Integer posuere, sapien non volutpat vulputate.
+        </p>
+
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+
+          <h3>
+            Glass Installation
+          </h3>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Integer condimentum ex sed neque malesuada.
+          </p>
+
+        </div>
+
+        <div class="service-card">
+
+          <h3>
+            Aluminum Fabrication
+          </h3>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Sed commodo tincidunt elit non aliquet.
+          </p>
+
+        </div>
+
+        <div class="service-card">
+
+          <h3>
+            Project Management
+          </h3>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Duis tempor feugiat ligula vel consequat.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="specialization">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Fields of Specialization
+        </h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Integer posuere sapien non volutpat vulputate.
+        </p>
+
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+
+          <h3>
+            Residential Glass Works
+          </h3>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Vestibulum sed malesuada erat.
+          </p>
+
+        </div>
+
+        <div class="service-card">
+
+          <h3>
+            Architectural Aluminum
+          </h3>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Vestibulum sed malesuada erat.
+          </p>
+
+        </div>
+
+        <div class="service-card">
+
+          <h3>
+            Commercial Projects
+          </h3>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Vestibulum sed malesuada erat.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="portfolio">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Featured Projects
+        </h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Vestibulum sed malesuada erat.
+        </p>
+
+      </div>
+
+      <div class="portfolio-grid">
+
+        <div class="portfolio-item">
+
+          <div class="portfolio-image"></div>
+
+          <div class="portfolio-content">
+
+            <h3>
+              Commercial Glass Installation
+            </h3>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Vestibulum sed malesuada erat.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="portfolio-item">
+
+          <div class="portfolio-image"></div>
+
+          <div class="portfolio-content">
+
+            <h3>
+              Residential Aluminum Works
+            </h3>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Vestibulum sed malesuada erat.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="portfolio-item">
+
+          <div class="portfolio-image"></div>
+
+          <div class="portfolio-content">
+
+            <h3>
+              Architectural Facade Project
+            </h3>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Vestibulum sed malesuada erat.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    <div class="footer-content">
+
+      <div>
+
+        <h3>
+          CALIX GLASS AND ALUMINUM
         </h3>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed
-          tristique erat. Curabitur feugiat, lectus in scelerisque viverra,
-          mauris nulla dignissim est.
+          Professional aluminum and glass fabrication
+          solutions for residential, commercial, and
+          industrial projects.
         </p>
+
       </div>
 
-      <div class="about-card">
-        <h3 style="margin-bottom:20px; color:var(--red);">
-          Objectives
+      <div>
+
+        <h3>
+          Contact
         </h3>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra
-          felis vitae sem bibendum, ac tempus elit faucibus. Vivamus ullamcorper
-          efficitur mauris, nec feugiat odio porta non.
+          hello@calix-demo.com
+          <br>
+          +63 900 000 0000
+          <br>
+          Antipolo City, Philippines
         </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="services">
-  <div class="container">
-
-    <div class="section-title">
-
-      <h2>Services Offered</h2>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere,
-        sapien non volutpat vulputate, purus felis ultricies libero.
-      </p>
-
-    </div>
-
-    <div class="services-grid">
-
-      <div class="service-card">
-        <h3>Glass Installation</h3>
-
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Integer condimentum ex sed neque malesuada.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <h3>Aluminum Fabrication</h3>
-
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Sed commodo tincidunt elit non aliquet.
-        </p>
-      </div>
-
-      
-
-      <div class="service-card">
-        <h3>Project Management</h3>
-
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Duis tempor feugiat ligula vel consequat.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-<section id="specialization">
-
-  <div class="container">
-
-    <div class="section-title">
-
-      <h2>Fields of Specialization</h2>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer posuere sapien non volutpat vulputate.
-      </p>
-
-    </div>
-
-    <div class="services-grid">
-
-
-
-      <div class="service-card">
-        <h3>Residential Glass Works</h3>
-
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Vestibulum sed malesuada erat.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <h3>Architectural Aluminum</h3>
-
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Vestibulum sed malesuada erat.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <h3>Commercial Projects</h3>
-
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Vestibulum sed malesuada erat.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section id="portfolio">
-
-  <div class="container">
-
-    <div class="section-title">
-
-      <h2>Featured Projects</h2>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Vestibulum sed malesuada erat.
-      </p>
-
-    </div>
-
-    <div class="portfolio-grid">
-
-      <div class="portfolio-item">
-
-        <div class="portfolio-image"></div>
-
-        <div class="portfolio-content">
-
-          <h3>Commercial Glass Installation</h3>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Vestibulum sed malesuada erat.
-          </p>
-
-        </div>
-
-      </div>
-
-      <div class="portfolio-item">
-
-        <div class="portfolio-image"></div>
-
-        <div class="portfolio-content">
-
-          <h3>Residential Aluminum Works</h3>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Vestibulum sed malesuada erat.
-          </p>
-
-        </div>
-
-      </div>
-
-      <div class="portfolio-item">
-
-        <div class="portfolio-image"></div>
-
-        <div class="portfolio-content">
-
-          <h3>Architectural Facade Project</h3>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Vestibulum sed malesuada erat.
-          </p>
-
-        </div>
 
       </div>
 
     </div>
 
-  </div>
+  </footer>
 
-</section>
+  <script>
 
-<footer>
+    const menuToggle =
+    document.getElementById('menuToggle');
 
-  <div class="footer-content">
+    const navLinks =
+    document.querySelector('.nav-links');
 
-    <div>
+    menuToggle.addEventListener('click',()=>{
 
-      <h3>CALIX GLASS AND ALUMINUM</h3>
+      navLinks.classList.toggle('active');
 
-      <p>
-        Professional aluminum and glass fabrication solutions for residential, commercial, and industrial projects.
-      </p>
+    });
 
-    </div>
+    window.addEventListener('scroll',()=>{
 
-    <div>
+      const nav=document.querySelector('nav');
 
-      <h3>Contact</h3>
+      if(window.scrollY > 50){
 
-      <p>
-        hello@calix-demo.com<br>
-        +63 900 000 0000<br>
-        Antipolo City, Philippines
-      </p>
+        nav.style.boxShadow=
+        '0 10px 25px rgba(0,0,0,0.08)';
 
-    </div>
+      }
 
-  </div>
+      else{
 
-</footer>
+        nav.style.boxShadow='none';
+
+      }
+
+    });
+
+  </script>
 
 </body>
 </html>
