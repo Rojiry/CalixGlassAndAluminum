@@ -14,16 +14,16 @@
     CALIX Glass and Aluminum | Company Profile
   </title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
 
   <link
     rel="preconnect"
-    href="https://fonts.gstatic.com"
+    href="[fonts.gstatic.com](https://fonts.gstatic.com)"
     crossorigin
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap)"
     rel="stylesheet"
   >
 
@@ -192,11 +192,6 @@
 
       color:white;
       text-align:right;
-
-      backdrop-filter:blur(6px);
-
-      background:
-      rgba(0,0,0,0.16);
 
       padding:40px;
 
@@ -386,6 +381,7 @@
       scroll-behavior:smooth;
 
       scrollbar-width:none;
+       position:relative;
     }
 
     .project-slider::-webkit-scrollbar{
@@ -408,26 +404,27 @@
     }
 
     .project-image{
-  width:100%;
-  aspect-ratio:16/8;
-  overflow:hidden;
-  background:#ddd;
-}
+      width:100%;
+      aspect-ratio:16/8;
+      overflow:hidden;
+      background:#ddd;
+    }
 
-.project-image img{
-  width:100%;
-  height:100%;
+    .project-image img{
+      width:100%;
+      height:100%;
 
-  object-fit:contain;
+      object-fit:contain;
 
-  background:#e7ddd1;
+      background:#e7ddd1;
 
-  display:block;
-}
+      display:block;
+    }
 
-.project-slide:hover .project-image img{
-  transform:scale(1.03);
-}
+    .project-slide:hover .project-image img{
+      transform:scale(1.03);
+    }
+
     .project-info{
       padding:35px;
     }
@@ -541,34 +538,34 @@
       max-width:420px;
     }
     
-   .contact-info a{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
+    .contact-info a{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
 
-.social-icon{
-  width:20px;
-  height:20px;
-  object-fit:contain;
-}
+    .social-icon{
+      width:20px;
+      height:20px;
+      object-fit:contain;
+    }
 
-.contact-info a{
-  color:rgba(255,255,255,0.88);
-  text-decoration:none;
-  transition:0.3s ease;
-  width:fit-content;
-}
+    .contact-info a{
+      color:rgba(255,255,255,0.88);
+      text-decoration:none;
+      transition:0.3s ease;
+      width:fit-content;
+    }
 
-.contact-info a:hover{
-  color:#ffffff;
-  transform:translateX(4px);
-}
+    .contact-info a:hover{
+      color:#ffffff;
+      transform:translateX(4px);
+    }
 
-.contact-address{
-  color:rgba(255,255,255,0.85);
-  line-height:1.7;
-}
+    .contact-address{
+      color:rgba(255,255,255,0.85);
+      line-height:1.7;
+    }
 
     /* TABLET */
 
@@ -585,44 +582,99 @@
     }
 
     /* MOBILE NAV */
-
     @media (max-width:768px){
 
-      .menu-toggle{
-        display:block;
-      }
-
       .nav-links{
+        display:none;
         position:absolute;
-
         top:100%;
         left:0;
-
         width:100%;
-
         background:var(--cream);
-
         flex-direction:column;
-        align-items:center;
-
-        gap:20px;
-
-        padding:25px 0;
-
-        display:none;
+        padding:20px;
+        gap:15px;
+        box-shadow:0 10px 20px rgba(0,0,0,0.1);
       }
 
       .nav-links.active{
         display:flex;
       }
 
-      .hero-content{
-        width:100%;
+      .menu-toggle{
+        display:block;
+      }
+
+    }
+
+    @media (max-width:480px){
+
+      .project-slider-wrapper{
+        padding-bottom:90px;
+      }
+
+      .project-slide{
+        position:relative;
+      }
+
+      .project-image{
+        aspect-ratio:4/3;
+      }
+
+      .project-info{
+        padding:24px;
+      }
+
+      .project-info p{
+        line-height:1.8;
       }
 
       .slider-btn{
-        width:46px;
-        height:46px;
+
+        position:absolute;
+
+        top:auto;
+        bottom:115px;
+
+        transform:none;
+
+        width:42px;
+        height:42px;
+
+        font-size:1rem;
+
+        background:
+        rgba(255,255,255,0.95);
+
+        backdrop-filter:blur(8px);
+
+        z-index:20;
+      }
+
+      .prev-btn{
+        left:15px;
+      }
+
+      .next-btn{
+        right:15px;
+      }
+
+      .slider-dots{
+
+        position:absolute;
+
+        left:50%;
+        bottom:28px;
+
+        transform:translateX(-50%);
+
+        width:100%;
+
+        justify-content:center;
+
+        gap:8px;
+
+        flex-wrap:wrap;
       }
 
     }
@@ -711,7 +763,7 @@
         <img src="CALIX_LOGO.png" alt="CALIX Logo">
       </div>
 
-      <div class="nav-links">
+      <div class="nav-links" id="navLinks">
 
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -964,338 +1016,160 @@
 
   </section>
 
-  <!-- ========================= -->
-<!-- PROJECTS SECTION -->
-<!-- REPLACE YOUR ENTIRE PORTFOLIO SECTION WITH THIS -->
-<!-- ========================= -->
+  <!-- PROJECTS SECTION -->
 
-<section id="portfolio">
+  <section id="portfolio">
 
-  <div class="container">
+    <div class="container">
 
-    <div class="section-title">
+      <div class="section-title">
 
-      <h2>
-        Featured Projects
-      </h2>
+        <h2>Featured Projects</h2>
 
-      <p>
-        A showcase of completed CALIX fabrication and
-        installation projects across residential,
-        commercial, and architectural developments.
-      </p>
+        <p>
+          A showcase of completed CALIX fabrication and installation projects across residential, commercial, and architectural developments.
+        </p>
+
+      </div>
+
+      <div class="project-slider-wrapper">
+
+        <!-- LEFT BUTTON -->
+        <button class="slider-btn prev-btn">
+          &#10094;
+        </button>
+
+        <!-- SLIDER -->
+        <div class="project-slider" id="projectSlider">
+
+          <div class="project-slide">
+            <div class="project-image">
+              <img src="png6.PNG" alt="">
+            </div>
+            <div class="project-info">
+              <h3>Commercial Facade & ACP Cladding</h3>
+              <p>              Commercial exterior showcasing expert Aluminum Composite Panel (ACP) cladding. The installation features complex, custom-curved profiles integrated seamlessly with large aluminum-framed storefront windows to create a modern architectural aesthetic.
+</p>
+            </div>
+          </div>
+
+          <div class="project-slide">
+            <div class="project-image">
+              <img src="   " alt="">
+            </div>
+            <div class="project-info">
+              <h3></h3>
+              <p>Modern curved ACP cladding integrated with aluminum storefront windows.</p>
+            </div>
+          </div>
+
+          <div class="project-slide">
+            <div class="project-image">
+              <img src="    " alt="">
+            </div>
+            <div class="project-info">
+              <h3>Commercial Storefront Glass & Doors</h3>
+              <p>Durable aluminum-framed glass entrance system for commercial use.</p>
+            </div>
+          </div>
+
+          <div class="project-slide">
+            <div class="project-image">
+              <img src="png2.PNG" alt="">
+            </div>
+            <div class="project-info">
+              <h3>Restaurant Glass Facade</h3>
+              <p>Large architectural glass panels with aluminum framing.</p>
+            </div>
+          </div>
+
+          <div class="project-slide">
+            <div class="project-image">
+              <img src="png 16.PNG" alt="">
+            </div>
+            <div class="project-info">
+              <h3>Built-in Aluminum Wardrobe</h3>
+              <p>Sliding frosted glass wardrobe with integrated storage system.</p>
+            </div>
+          </div>
+
+          <div class="project-slide">
+            <div class="project-image">
+              <img src="pn 17.PNG" alt="">
+            </div>
+            <div class="project-info">
+              <h3>Sliding Closet Doors</h3>
+              <p>Modern wood-grain aluminum frame with frosted glass panels.</p>
+            </div>
+          </div>
+
+          <div class="project-slide">
+            <div class="project-image">
+              <img src="png 15.PNG" alt="">
+            </div>
+            <div class="project-info">
+              <h3>Glass Stair Railings</h3>
+              <p>Frameless structural glass with stainless steel supports.</p>
+            </div>
+          </div>
+
+          <div class="project-slide">
+            <div class="project-image">
+              <img src="png11.PNG" alt="">
+            </div>
+            <div class="project-info">
+              <h3>ACP Cladding & Windows</h3>
+              <p>Multi-story building with aluminum cladding and glass windows.</p>
+            </div>
+          </div>
+
+          <div class="project-slide">
+            <div class="project-image">
+              <img src="png10.PNG" alt="">
+            </div>
+            <div class="project-info">
+              <h3>Residential Glass Integration</h3>
+              <p>Modern home with sliding doors and glass railings.</p>
+            </div>
+          </div>
+
+           <div class="project-slide">
+            <div class="project-image">
+              <img src="png10.PNG" alt="">
+            </div>
+            <div class="project-info">
+              <h3>Residential Glass Integration</h3>
+              <p>Modern home with sliding doors and glass railings.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT BUTTON -->
+        <button class="slider-btn next-btn">
+          &#10095;
+        </button>
+
+      </div>
+
+      <!-- DOTS -->
+      <div class="slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
 
     </div>
 
-    <div class="project-slider-wrapper">
+  </section>
 
-      <!-- LEFT BUTTON -->
-      <button class="slider-btn prev-btn">
-        &#10094;
-      </button>
-
-      <!-- SLIDER -->
-      <div
-        class="project-slider"
-        id="projectSlider"
-      >
-
-        <!-- PROJECT 1 -->
-         <div class="project-slide">
-
-          <div class="project-image">
-
-            <img
-              src="png6.PNG"
-              alt="Modern Storefront Facade"
-            >
-
-          </div>
-
-          <div class="project-info">
-
-            <h3>
-             Modern Residential Window & Railing Systems
-            </h3>
-
-            <p>
-             A contemporary home exterior showcasing dark, powder-coated aluminum grid windows and sliding doors. The facade is further elevated by the installation of clear glass balcony enclosures, offering unobstructed views and a premium finish.
-            </p>
-
-          </div>
-
-        </div>
-        
-
-        <!-- PROJECT 2 -->
-         
-        <div class="project-slide">
-
-          <div class="project-image">
-
-            <img
-              src="pn5.PNG"
-              alt="Residential Sliding Windows"
-            >
-
-          </div>
-
-          <div class="project-info">
-
-            <h3>
-              Commercial Facade & ACP Cladding 
-            </h3>
-
-            <p>
-              commercial exterior showcasing expert Aluminum Composite Panel (ACP) cladding. The installation features complex, custom-curved profiles integrated seamlessly with large aluminum-framed storefront windows to create a modern architectural aesthetic.
-            </p>
-
-          </div>
-
-        </div>
-
-        <!-- PROJECT 3 -->
-         
-        <div class="project-slide">
-
-          <div class="project-image">
-
-            <img
-              src="png1.PNG"
-              alt="Shower Enclosure System"
-            >
-
-          </div>
-
-          <div class="project-info">
-
-            <h3>
-             Commercial Storefront Glass & Doors 
-            </h3>
-
-            <p>
-              A heavy-duty commercial storefront installation for a high-traffic restaurant. It features durable aluminum-framed glass entrance doors and expansive fixed glass windows, providing excellent interior visibility and security.
-            </p>
-
-          </div>
-
-        </div>
-     
-
-        <!-- PROJECT 4 -->
-         
-        <div class="project-slide">
-
-          <div class="project-image">
-
-            <img
-              src="png2.PNG"
-              alt="Skylight Installation"
-            >
-
-          </div>
-
-          <div class="project-info">
-
-            <h3>
-              Commercial Storefront Glass & Doors 
-            </h3>
-
-            <p>
-              Daytime view of a commercial restaurant facade highlighting the seamless integration of large architectural glass panels and sturdy aluminum framing, tailored to complement the building's exterior design.
-            </p>
-
-          </div>
-
-        </div>
-
-        <!-- PROJECT 5 -->
-        <div class="project-slide">
-
-          <div class="project-image">
-
-            <img
-              src="png 16.PNG"
-              alt="ACP Cladding Installation"
-            >
-
-          </div>
-
-          <div class="project-info">
-
-            <h3>
-              Built-in Aluminum Wardrobe
-            </h3>
-
-            <p>
-              A comprehensive built-in cabinetry solution. This features large sliding doors with frosted glass and wood-look aluminum framing, integrated perfectly with matching fixed cabinets and an illuminated display shelving unit.
-            </p>
-
-          </div>
-
-        </div>
-
-        <!-- PROJECT 6 -->
-         <div class="project-slide">
-
-          <div class="project-image">
-
-            <img
-              src="pn 17.PNG"
-              alt="Custom Aluminum Sliding Closet Doors"
-            >
-
-          </div>
-
-          <div class="project-info">
-
-            <h3>
-              Custom Aluminum Sliding Closet Doors
-            </h3>
-
-            <p>
-              A clean, modern interior installation featuring multi-panel sliding doors. The system utilizes a wood-grain finished aluminum frame paired with frosted glass, ideal for wardrobes or elegant room dividers.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- PROJECT 7 -->
-         <div class="project-slide">
-
-          <div class="project-image">
-
-            <img
-              src="png 15.PNG"
-              alt="Frameless Glass Door"
-            >
-
-          </div>
-
-          <div class="project-info">
-
-            <h3>
-              Modern Glass Stair Railings
-            </h3>
-
-            <p>
-              Description: An elegant interior glass installation featuring frameless structural glass stair railings. Secured with stainless steel standoffs and a matching handrail, this transparent barrier maintains an open-concept feel above the indoor water feature.
-            </p>
-
-          </div>
-
-        </div>
-        
-         
-        
-
-        <!-- PROJECT 8 -->
-        <div class="project-slide">
-
-          <div class="project-image">
-
-            <img
-              src="png11.PNG"
-              alt="Glass Partition System"
-            >
-
-          </div>
-
-          <div class="project-info">
-
-            <h3>
-              Architectural Cladding & Window Systems
-            </h3>
-
-            <p>
-              A low-angle architectural view demonstrating precision fabrication. This highlights the smooth integration of multi-colored ACP cladding alongside premium aluminum awning windows and fixed glass panels on a multi-story commercial building
-            </p>
-
-          </div>
-
-        </div>
-
-        <!-- PROJECT 9 -->
-        <div class="project-slide">
-
-          <div class="project-image">
-
-            <img
-              src="png10.PNG"
-              alt="Architectural Railings"
-            >
-
-          </div>
-
-          <div class="project-info">
-
-            <h3>
-              Residential Glass & Aluminum Integration 
-            </h3>
-
-            <p>
-              A modern, multi-story residential project featuring extensive glass and aluminum work. The home is outfitted with large aluminum sliding doors, fixed windows, and sleek frameless glass balcony railings that stand out beautifully under evening illumination.
-            </p>
-
-          </div>
-
-        </div>
-
-        <!-- PROJECT 10 -->
-         <div class="project-slide">
-
-          <div class="project-image">
-
-            <img
-              src="png11.PNG"
-              alt="Glass Partition System"
-            >
-
-          </div>
-
-          <div class="project-info">
-
-            <h3>
-              Architectural Cladding & Window Systems
-            </h3>
-
-            <p>
-              A low-angle architectural view demonstrating precision fabrication. This highlights the smooth integration of multi-colored ACP cladding alongside premium aluminum awning windows and fixed glass panels on a multi-story commercial building
-            </p>
-
-          </div>
-
-        </div>
-        
-
-      <!-- RIGHT BUTTON -->
-      <button class="slider-btn next-btn">
-        &#10095;
-      </button>
-
-    </div>
-
-    <!-- DOTS -->
-    <div class="slider-dots">
-
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-
-    </div>
-
-  </div>
-
-</section>
   <!-- FOOTER -->
 
   <footer>
@@ -1318,131 +1192,80 @@
 
       <div class="contact-info">
 
-  <a href="mailto:weng_paeldon@yahoo.com" target="_blank">
-    ✉️ weng_paeldon@yahoo.com
-  </a>
+        <a href="mailto:weng_paeldon@yahoo.com" target="_blank">
+          ✉️ weng_paeldon@yahoo.com
+        </a>
 
-  <a href="https://www.facebook.com/calixglass" target="_blank">
-    <img src="facebook.png" alt="Facebook Icon" class="social-icon">
-    facebook.com/calixglass
-  </a>
+        <a href="[facebook.com](https://www.facebook.com/calixglass)" target="_blank">
+          <img src="facebook.png" alt="Facebook Icon" class="social-icon">
+          facebook.com/calixglass
+        </a>
 
-  <a href="https://www.instagram.com/calix.fabrication/" target="_blank">
-    <img src="social.png" alt="Instagram Icon" class="social-icon">
-    instagram.com/calix.fabrication
-  </a>
+        <a href="[instagram.com](https://www.instagram.com/calix.fabrication/)" target="_blank">
+          <img src="social.png" alt="Instagram Icon" class="social-icon">
+          instagram.com/calix.fabrication
+        </a>
 
-  <a href="tel:+639213972042">
-    📞 +63 921 397 2042
-  </a>
+        <a href="tel:+639213972042">
+          📞 +63 921 397 2042
+        </a>
 
-  <div class="contact-address">
-    📍 11 Nile St. Victoriaville Homes,<br>
-    Antipolo City, Philippines
-  </div>
+        <div class="contact-address">
+          📍 11 Nile St. Victoriaville Homes,<br>
+          Antipolo City, Philippines
+        </div>
 
-</div>
+      </div>
+
+    </div>
 
   </footer>
 
   <!-- SCRIPT -->
-
   <script>
 
-    const menuToggle =
-    document.getElementById('menuToggle');
-
-    const navLinks =
-    document.querySelector('.nav-links');
-
-    menuToggle.addEventListener('click',()=>{
-
-      navLinks.classList.toggle('active');
-
-    });
-
-    window.addEventListener('scroll',()=>{
-
-      const nav =
-      document.querySelector('nav');
-
-      if(window.scrollY > 50){
-
-        nav.style.boxShadow =
-        '0 10px 25px rgba(0,0,0,0.08)';
-
-      }
-
-      else{
-
-        nav.style.boxShadow = 'none';
-
-      }
-
-    });
-
-    const slider =
-    document.getElementById('projectSlider');
-
-    const prevBtn =
-    document.querySelector('.prev-btn');
-
-    const nextBtn =
-    document.querySelector('.next-btn');
-
-    const dots =
-    document.querySelectorAll('.dot');
+    const slider = document.getElementById('projectSlider');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const dots = document.querySelectorAll('.dot');
+    const slides = document.querySelectorAll('.project-slide');
 
     let currentSlide = 0;
 
     function updateDots(index){
-
-      dots.forEach(dot=>{
-        dot.classList.remove('active');
-      });
-
-      dots[index].classList.add('active');
-
+      dots.forEach(dot => dot.classList.remove('active'));
+      if (dots[index]) dots[index].classList.add('active');
     }
 
-    nextBtn.addEventListener('click',()=>{
-
-      const slides =
-      document.querySelectorAll('.project-slide');
-
-      currentSlide++;
-
-      if(currentSlide >= slides.length){
-        currentSlide = 0;
-      }
+    function goToSlide(index){
+      currentSlide = index;
 
       slider.scrollTo({
-        left:slides[currentSlide].offsetLeft,
-        behavior:'smooth'
+        left: slides[index].offsetLeft,
+        behavior: 'smooth'
       });
 
-      updateDots(currentSlide);
+      updateDots(index);
+    }
 
+    nextBtn.addEventListener('click', () => {
+      currentSlide++;
+      if (currentSlide >= slides.length) currentSlide = 0;
+      goToSlide(currentSlide);
     });
 
-    prevBtn.addEventListener('click',()=>{
-
-      const slides =
-      document.querySelectorAll('.project-slide');
-
+    prevBtn.addEventListener('click', () => {
       currentSlide--;
+      if (currentSlide < 0) currentSlide = slides.length - 1;
+      goToSlide(currentSlide);
+    });
 
-      if(currentSlide < 0){
-        currentSlide = slides.length - 1;
-      }
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
 
-      slider.scrollTo({
-        left:slides[currentSlide].offsetLeft,
-        behavior:'smooth'
-      });
-
-      updateDots(currentSlide);
-
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
     });
 
   </script>
